@@ -1,0 +1,32 @@
+import React, { useState } from "react";
+
+function Usestatehook() {
+  const [cars, setCars] = useState({
+    brand: "Ford",
+    model: "Mustang",
+    year: "2020",
+    color: "blue",
+  });
+  const change = () => {
+    setCars((previous) => {
+      return { ...previous, brand: "volvo", model: "s90" };
+    });
+  };
+  return (
+    <div>
+      <ol>
+        <li>{cars.brand}</li>
+        <li>{cars.model}</li>
+        <li>{cars.year}</li>
+        <li>{cars.color}</li>
+      </ol>
+      <input
+        value="Click here to visit volvo"
+        type="submit"
+        onClick={change}
+      ></input>
+    </div>
+  );
+}
+
+export default Usestatehook;
